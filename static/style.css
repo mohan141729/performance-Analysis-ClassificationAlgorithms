@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: lightyellow;
+}
+ .button{
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color:rgb(54, 183, 54);
+    color: white;
+    border-radius: 10px;
+    border-width:0px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(54, 183, 54);
+    box-shadow: 0px 0px 30px #5dc454;
+}
+h1, h2 {
+    text-align: center;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+.highlight {
+    font-weight: bold;
+    background-color: #d4edda; /* Light green background */
+}
+img {
+    display: block;
+    margin: 30px auto;
+    max-width: 90%;
+}
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.form-container input, .form-container button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+}
+/* Custom styles for highlighting */
+.highlight-cell {
+    font-weight: bold;
+    color:darkgreen;
+    background-color: #d4edda;
+}

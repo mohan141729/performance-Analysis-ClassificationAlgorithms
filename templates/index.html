@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Model Performance Analysis</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <h1>Upload a Dataset for Classification Performance Analysis</h1>
+
+    <!-- Form to upload dataset -->
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data">
+            <label for="file">Upload CSV file:</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+            <button type="submit" class="button">Analyze</button>
+        </form>
+    </div>
+
+    <!-- Display results if available -->
+    {% if results %}
+    
+    <h2>Model Performance on Uploaded Dataset</h2>
+    
+    <!-- Table displaying metrics for each model -->
+    <table id="metrics-table">
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1 Score</th>
+            <th>AUC</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result["Model"] }}</td>
+            <td>{{ result["Accuracy"] if result["Accuracy"] != "N/A" else "N/A" }}</td>
+            <td>{{ result["Precision"] if result["Precision"] != "N/A" else "N/A" }}</td>
+            <td>{{ result["Recall"] if result["Recall"] != "N/A" else "N/A" }}</td>
+            <td>{{ result["F1 Score"] if result["F1 Score"] != "N/A" else "N/A" }}</td>
+            <td>{{ result["AUC"] if result["AUC"] != "N/A" else "N/A" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Display comparison chart for all metrics -->
+    <h2>Model Performance Metrics Comparison</h2>
+    <img src="data:image/png;base64,{{ comparison_chart }}" alt="Model Performance Metrics Comparison">
+
+    <!-- Display confusion matrices for each model -->
+    <h2>Confusion Matrices</h2>
+    {% for matrix in confusion_matrices %}
+        <h3>{{ matrix.name }} Confusion Matrix</h3>
+        <img src="data:image/png;base64,{{ matrix.plot }}" alt="Confusion Matrix for {{ matrix.name }}">
+    {% endfor %}
+
+    {% endif %}
+
+    <script src="static/script.js"></script>
+
+</body>
+</html>
