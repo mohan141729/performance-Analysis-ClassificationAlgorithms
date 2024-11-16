@@ -5,7 +5,6 @@ resources:
     properties:
       sourceConfiguration:
         authenticationConfiguration:
-<<<<<<< HEAD
           connectionArn: arn:aws:apprunner:us-east-1:<aws_account_id>:connection/<your-connection-name>
         autoDeploymentsEnabled: true
         imageRepository:
@@ -18,20 +17,6 @@ resources:
         scalingConfiguration:
           minSize: 1
           maxSize: 3
-=======
-          connectionArn: arn:aws:apprunner:us-east-1:<your-account-id>:connection/<your-connection-name>
-        autoDeploymentsEnabled: true
-        codeRepository:
-          repositoryUrl: "https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms"
-          sourceCodeVersion:
-            type: BRANCH
-            value: main
-          codeConfiguration:
-            configurationSource: REPOSITORY
-      instanceConfiguration:
-        cpu: 1024
-        memory: 2048
->>>>>>> 3c85ff195c51c96493f4c7686ad5d1517779ff1d
       healthCheckConfiguration:
         protocol: HTTP
         path: /
@@ -39,8 +24,4 @@ resources:
         intervalSeconds: 10
         healthyThreshold: 1
         unhealthyThreshold: 5
-<<<<<<< HEAD
       serviceRole: arn:aws:iam::<aws_account_id>:role/AppRunnerServiceRole
-=======
-
->>>>>>> 3c85ff195c51c96493f4c7686ad5d1517779ff1d
