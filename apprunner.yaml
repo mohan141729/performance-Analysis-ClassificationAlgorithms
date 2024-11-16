@@ -6,22 +6,11 @@ resources:
       sourceConfiguration:
         authenticationConfiguration:
           connectionArn: arn:aws:apprunner:us-east-1:<aws_account_id>:connection/<your-connection-name>
-        autoDeploymentsEnabled: true
-        imageRepository:
-          imageIdentifier: <your-ecr-repo>:latest
-          imageConfiguration:
-            port: 8000
-      instanceConfiguration:
-        cpu: 1024
-        memory: 2048
-        scalingConfiguration:
-          minSize: 1
-          maxSize: 3
-      healthCheckConfiguration:
-        protocol: HTTP
-        path: /
-        timeoutSeconds: 5
-        intervalSeconds: 10
-        healthyThreshold: 1
-        unhealthyThreshold: 5
-      serviceRole: arn:aws:iam::<aws_account_id>:role/AppRunnerServiceRole
+      autoDeploymentsEnabled: true
+      imageRepository:
+        imageIdentifier: <your-ecr-repo>:latest
+        imageConfiguration:
+          port: 8000
+    instanceConfiguration:
+      cpu: 1024
+      memory: 2048
