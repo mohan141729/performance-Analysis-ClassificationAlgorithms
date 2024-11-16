@@ -2,10 +2,6 @@ version: 1.0
 runtime: python3
 run:
   command: python app.py
-<<<<<<< HEAD
-=======
-port: 8000
->>>>>>> 32be2b4e526aa2c18b25873f62bea5106d6b1ebd
 source_configuration:
   authentication_configuration:
     connection_arn: arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136
@@ -14,9 +10,5 @@ source_configuration:
     repository_url: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git
     source_code_version:
       type: BRANCH
-      value: main  # Replace with your branch name if not "main"
-<<<<<<< HEAD
-=======
+      value: main 
 
-
->>>>>>> 32be2b4e526aa2c18b25873f62bea5106d6b1ebd
