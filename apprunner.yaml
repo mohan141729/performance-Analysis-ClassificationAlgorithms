@@ -2,13 +2,5 @@ version: 1.0
 runtime: python3
 run:
   command: python app.py
-source_configuration:
-  authentication_configuration:
-    connection_arn: arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136
-  auto_deployments_enabled: true
-  code_repository:
-    repository_url: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git
-    source_code_version:
-      type: BRANCH
-      value: main 
+
 
