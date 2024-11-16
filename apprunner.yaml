@@ -1,44 +1,27 @@
 version: 1.0
 resources:
-  - name: performance-analysis-service
+  - name: perf-classifier
     type: "AWS::AppRunner::Service"
     properties:
       sourceConfiguration:
-        imageRepository:
-          imageIdentifier: "<aws_account_id>.dkr.ecr.<your-region>.amazonaws.com/performance-analysis-repo:latest"
-          imageConfiguration:
-            port: "8000"
-        autoDeploymentsEnabled: true
         authenticationConfiguration:
-          connectionArn: arn:aws:secretsmanager:<your-region>:<aws_account_id>:secret:your-secrets-manager-connection
-        environmentVariables:
-          - name: FLASK_APP
-            value: "app.py"
-          - name: FLASK_ENV
-            value: "production"
-          - name: APP_PORT
-            value: "8000"
+          connectionArn: arn:aws:apprunner:us-east-1:<your-account-id>:connection/<your-connection-name>
+        autoDeploymentsEnabled: true
+        codeRepository:
+          repositoryUrl: "https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms"
+          sourceCodeVersion:
+            type: BRANCH
+            value: main
+          codeConfiguration:
+            configurationSource: REPOSITORY
       instanceConfiguration:
         cpu: 1024
         memory: 2048
-        environmentVariables:
-          - name: AWS_REGION
-            value: "<your-region>"
-            # Include other necessary environment variables if required
-        scalingConfiguration:
-          minSize: 1
-          maxSize: 2
-
       healthCheckConfiguration:
-        path: "/"
-        intervalSeconds: 30
+        protocol: HTTP
+        path: /
         timeoutSeconds: 5
-        healthyThreshold: 3
-        unhealthyThreshold: 3
+        intervalSeconds: 10
+        healthyThreshold: 1
+        unhealthyThreshold: 5
 
-      serviceRole: arn:aws:iam::<aws_account_id>:role/AppRunnerServiceRole
-
-# Optionally, you can specify logs and other configurations.
-logging:
-  logGroup: "/aws/apprunner/performance-analysis-service"
-  logStreamPrefix: "logs"
