@@ -14,3 +14,8 @@ resources:
     instanceConfiguration:
       cpu: 1024
       memory: 2048
+      build:
+  commands:
+    - npm install  # or any other build command
+    - npm run build
+
