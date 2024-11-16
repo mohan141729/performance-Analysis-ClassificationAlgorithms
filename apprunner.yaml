@@ -5,7 +5,12 @@ resources:
     properties:
       sourceConfiguration:
         authenticationConfiguration:
-          connectionArn: arn:aws:apprunner:<your-region>:<aws_account_id>:connection/<your-connection-name>
+          connectionArn: arn:aws:apprunner:us-east-1:<aws_account_id>:connection/<your-connection-name>
+        autoDeploymentsEnabled: true
+        imageRepository:
+          imageIdentifier: <your-ecr-repo>:latest
+          imageConfiguration:
+            port: 8000
       instanceConfiguration:
         cpu: 1024
         memory: 2048
@@ -20,4 +25,3 @@ resources:
         healthyThreshold: 1
         unhealthyThreshold: 5
       serviceRole: arn:aws:iam::<aws_account_id>:role/AppRunnerServiceRole
-
