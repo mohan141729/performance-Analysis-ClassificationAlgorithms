@@ -1,6 +1,11 @@
 version: 1.0
 runtime: python3
-entrypoint: python app.py
+run:
+  build:
+    commands:
+      - pip install -r requirements.txt
+  start:
+    command: python app.py
 port: 8000
 source_configuration:
   authentication_configuration:
@@ -10,14 +15,5 @@ source_configuration:
     repository_url: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git
     source_code_version:
       type: BRANCH
-      value: main  # Replace with your branch name if not "main"
-instance_configuration:
-  cpu: 1024
-  memory: 2048
-health_check_configuration:
-  protocol: HTTP
-  path: /
-  interval_seconds: 10
-  timeout_seconds: 5
-  healthy_threshold: 2
-  unhealthy_threshold: 3
+      value: main  
+
