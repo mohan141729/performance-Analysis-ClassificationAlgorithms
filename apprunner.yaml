@@ -4,11 +4,6 @@ resources:
     type: "AWS::AppRunner::Service"
     properties:
       sourceConfiguration:
-        imageRepository:
-          imageIdentifier: "<aws_account_id>.dkr.ecr.<your-region>.amazonaws.com/performance-analysis-repo:latest"
-          imageConfiguration:
-            port: "8000"
-        autoDeploymentsEnabled: true
         authenticationConfiguration:
           connectionArn: arn:aws:apprunner:<your-region>:<aws_account_id>:connection/<your-connection-name>
       instanceConfiguration:
