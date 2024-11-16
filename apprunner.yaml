@@ -5,17 +5,16 @@ resources:
     properties:
       sourceConfiguration:
         authenticationConfiguration:
-          connectionArn: arn:aws:apprunner:us-east-1:654654203509:connection/arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136
-      autoDeploymentsEnabled: true
-      imageRepository:
-        imageIdentifier: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git:latest
-        imageConfiguration:
-          port: 8000
+          connectionArn: arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136  # Corrected ARN
+        autoDeploymentsEnabled: true
+        imageRepository:
+          imageIdentifier: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git:latest
+          imageConfiguration:
+            port: 8000
     instanceConfiguration:
       cpu: 1024
       memory: 2048
-      build:
-  commands:
-    - npm install  # or any other build command
-    - npm run build
-
+    build:
+      commands:
+        - npm install  # or any other build command
+        - npm run build
