@@ -1,7 +1,7 @@
 version: 1.0
 runtime: python3
-entrypoint: python app.py
-port: 8000
+run:
+  command: python app.py
 source_configuration:
   authentication_configuration:
     connection_arn: arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136
@@ -11,13 +11,3 @@ source_configuration:
     source_code_version:
       type: BRANCH
       value: main  # Replace with your branch name if not "main"
-instance_configuration:
-  cpu: 1024
-  memory: 2048
-health_check_configuration:
-  protocol: HTTP
-  path: /
-  interval_seconds: 10
-  timeout_seconds: 5
-  healthy_threshold: 2
-  unhealthy_threshold: 3
