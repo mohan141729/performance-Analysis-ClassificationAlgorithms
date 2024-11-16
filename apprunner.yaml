@@ -5,10 +5,10 @@ resources:
     properties:
       sourceConfiguration:
         authenticationConfiguration:
-          connectionArn: arn:aws:apprunner:us-east-1:<aws_account_id>:connection/<your-connection-name>
+          connectionArn: arn:aws:apprunner:us-east-1:654654203509:connection/arn:aws:apprunner:us-east-1:654654203509:connection/mohanGithub/c1517c422e804ff093bd8bed1b7ad136
       autoDeploymentsEnabled: true
       imageRepository:
-        imageIdentifier: <your-ecr-repo>:latest
+        imageIdentifier: https://github.com/mohan141729/performance-Analysis-ClassificationAlgorithms.git:latest
         imageConfiguration:
           port: 8000
     instanceConfiguration:
