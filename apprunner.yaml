@@ -1,10 +1,4 @@
 version: 1.0
 runtime: python3
 run:
-<<<<<<< HEAD
   command: python app.py 
-=======
-  command: python app.py
-
-
->>>>>>> 4a6e003ebb866d81e9c43dd59b98db15835fef0b
